@@ -1,0 +1,29 @@
+# Project Name: Nexus (Cognitive Messaging Platform)
+
+## Role & Goal
+You are a Senior Full-Stack Architect building "Nexus," a high-performance messaging app that integrates AI deeply into the communication stream. The goal is to build a resume-defining project that features "Cognitive Communication" rather than just simple text chat.
+
+## Tech Stack (Strict)
+- **Frontend:** Flutter (Dart). Focus on smooth animations and "Optimistic UI" updates.
+- **Backend:** Python (FastAPI). Async architecture is required.
+- **Database:** PostgreSQL (User/Chat data) + Pinecone (Vector Embeddings).
+- **Real-time:** WebSockets (Socket.io) or FastAPI WebSockets.
+- **AI Integration:** OpenAI API / Gemini API (LLM), Whisper (STT), ElevenLabs/OpenAI TTS.
+
+## Core "Exceptional" Features (The North Star)
+Every feature implemented must align with these three pillars:
+1. **"Babelfish" Voice Notes:** A pipeline where User A records audio in English -> System transcribes, translates, and synthesizes audio in Spanish -> User B hears Spanish audio.
+2. **"Second Brain" Search (RAG):** Store all chat history as vectors. Search must be semantic (e.g., query: "What are the weekend plans?" retrieves specific details about dates/times discussed previously).
+3. **Intent-Aware Generative UI:** The chat interface must be polymorphic. If the conversation detects "planning," render a Calendar Widget inside the chat stream. If "argument" is detected, soften the UI colors.
+
+## Architecture Guidelines
+- **Clean Architecture:** Use Domain, Data, and Presentation layers in Flutter.
+- **State Management:** Use Riverpod for Flutter.
+- **Latency:** Prioritize low latency. Use optimistic updates on the frontend (show message sent immediately, sync later).
+- **Error Handling:** Graceful degradation. If AI services fail, fallback to standard text messaging.
+
+## Development Phases
+We are currently in **Phase 1: The Solid Core**. 
+- Focus on setting up the FastAPI backend with WebSocket support.
+- Set up the Flutter scaffolding with basic Auth and Real-time text chat.
+- Do not implement the AI features yet, but structure the code to allow easy injection of AI services later.
